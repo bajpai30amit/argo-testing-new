@@ -1,27 +1,10 @@
-envName: test
-
-default:
-  app:
-    destination:
-      namespace: test
-      server: https://kubernetes.default.svc
-    source:
-      targetRevision: test
-
-
-applications:
-  pdf-service:
-    enabled: true
-    enableAutoSync: true
-
-  mailqueue:
-    enabled: true
-    enableAutoSync: true
-
-  api-gateway:
-    enabled: true
-    enableAutoSync: true
-
-  auth-service:
-    enabled: true
-    enableAutoSync: true
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
